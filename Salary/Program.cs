@@ -14,7 +14,7 @@ namespace Salary
             EmployeeFixedRate fixedRate = new EmployeeFixedRate(accrual);
             fixedRate.Employee = employee;
             fixedRate.SalaryRate = salaryRate;
-            Console.WriteLine($"Salary Of {fixedRate.Employee} is {fixedRate.SalaryRate}");
+            Console.WriteLine($"Salary Of {fixedRate.Employee} is {fixedRate.SalaryAccrual()}");
             Console.WriteLine("\tEmployee with hourly rate");
             Console.WriteLine("Enter the accural salary: ");
             double accrual1 = double.Parse(Console.ReadLine());
@@ -40,12 +40,12 @@ namespace Salary
             Console.WriteLine("Enter the initials of employee: ");
             string employee3 = Console.ReadLine();
             Console.WriteLine("Fixed rate:");
-            double salaryRate2 = double.Parse(Console.ReadLine());
+            double accrual2 = double.Parse(Console.ReadLine());
             Console.WriteLine("Enter how many percents:");
             double percent = double.Parse(Console.ReadLine());
             Console.WriteLine("Enter how many days:");
             int days = int.Parse(Console.ReadLine());
-            EmployeePercentRate employeePercentRate = new EmployeePercentRate(salaryRate, percent, days);
+            EmployeePercentRate employeePercentRate = new EmployeePercentRate(accrual2, percent, days);
             employeePercentRate.Employee = employee3;
             Console.WriteLine($"{employeePercentRate.Employee}. Rate is {employeePercentRate.Salary()}");
         }

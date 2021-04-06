@@ -13,7 +13,7 @@
         }
         public double Salary()
         {
-            return (days*8)+SalaryAccrual() * (percent/100);
+            return days*8+accrual * (percent/100);
         }
     }
 }
