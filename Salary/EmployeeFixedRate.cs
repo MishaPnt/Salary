@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Salary
+﻿namespace Salary
 {
-    class FixedRateEmployee
+    class EmployeeFixedRate
     {
         private double accrual;
-        public FixedRateEmployee(double accrual)
+        public EmployeeFixedRate(double accrual)
         {
             this.accrual = accrual;
         }
