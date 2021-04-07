@@ -5,7 +5,7 @@ namespace Salary
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter the accural salary: ");
+            Console.WriteLine("Enter the accrual salary: ");
             double accrual = double.Parse(Console.ReadLine());
             Console.WriteLine("Enter the initials of employee: ");
             string employee = Console.ReadLine();
@@ -16,7 +16,7 @@ namespace Salary
             fixedRate.SalaryRate = salaryRate;
             Console.WriteLine($"Salary Of {fixedRate.Employee} is {fixedRate.SalaryAccrual()}");
             Console.WriteLine("\tEmployee with hourly rate");
-            Console.WriteLine("Enter the accural salary: ");
+            Console.WriteLine("Enter the accrual salary: ");
             double accrual1 = double.Parse(Console.ReadLine());
             Console.WriteLine("Enter the working hours: ");
             double hours = double.Parse(Console.ReadLine());
