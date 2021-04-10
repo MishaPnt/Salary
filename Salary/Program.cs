@@ -5,49 +5,41 @@ namespace Salary
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter the accrual salary: ");
-            double accrual = double.Parse(Console.ReadLine());
+            Console.WriteLine("Enter the rate salary: ");
+            double rate = double.Parse(Console.ReadLine());
             Console.WriteLine("Enter the initials of employee: ");
-            string employee = Console.ReadLine();
-            Console.WriteLine("Enter the rate of employee: ");
-            double salaryRate = double.Parse(Console.ReadLine());
-            EmployeeFixedRate fixedRate = new EmployeeFixedRate(accrual);
-            fixedRate.Employee = employee;
-            fixedRate.SalaryRate = salaryRate;
-            Console.WriteLine($"Salary Of {fixedRate.Employee} is {fixedRate.SalaryAccrual()}");
+            string nameOfEmployee = Console.ReadLine();
+            Employee employeeHourlyRate = new EmployeeHourlyRate(rate,nameOfEmployee);
+            Console.WriteLine($"Salary Of {employeeHourlyRate.Name()} is {employeeHourlyRate.Salary()}");
             Console.WriteLine("\tEmployee with hourly rate");
             Console.WriteLine("Enter the accrual salary: ");
-            double accrual1 = double.Parse(Console.ReadLine());
+            double rate1 = double.Parse(Console.ReadLine());
             Console.WriteLine("Enter the working hours: ");
             double hours = double.Parse(Console.ReadLine());
             Console.WriteLine("Enter the initials of employee: ");
-            string employee1 = Console.ReadLine();
-            EmployeeHourlyRate hourlyRate = new EmployeeHourlyRate(accrual1, hours);
-            hourlyRate.Employee = employee1;
-            Console.WriteLine($"Salary Of {hourlyRate.Employee} is {hourlyRate.HoursRate()}");
+            string nameOfEmployee1 = Console.ReadLine();
+            Employee hourlyRate = new EmployeeHourlyRate(hours,rate1,nameOfEmployee1);
+            Console.WriteLine($"Salary Of {hourlyRate.Name()} is {hourlyRate.Salary()}");
             Console.WriteLine("\tEmployee in the state");
             Console.WriteLine("Enter the initials of employee: ");
-            string employee2 = Console.ReadLine();
+            string nameOfEmployee2 = Console.ReadLine();
             Console.WriteLine("Workplace: ");
-            string state = Console.ReadLine();
+            string workplace = Console.ReadLine();
             Console.WriteLine("Fixed rate:");
-            double salaryRate1 = double.Parse(Console.ReadLine());
-            EmployeeInState employeeInState = new EmployeeInState(salaryRate1);
-            employeeInState.Employee = employee2;
-            employeeInState.State = state;
-            Console.WriteLine($"{employeeInState.Employee} working in {employeeInState.State}. Rate is {salaryRate1}");
+            double rate2 = double.Parse(Console.ReadLine());
+            Employee employeeInState = new EmployeeInState(workplace,rate,nameOfEmployee2);
+            Console.WriteLine($"{employeeInState.Name()} working in {employeeInState.Workplace()}. Rate is {employeeInState.Salary()}");
             Console.WriteLine("\tPercent Rate of employee ");
             Console.WriteLine("Enter the initials of employee: ");
-            string employee3 = Console.ReadLine();
+            string nameOfEmployee3 = Console.ReadLine();
             Console.WriteLine("Fixed rate:");
-            double accrual2 = double.Parse(Console.ReadLine());
+            double rate3 = double.Parse(Console.ReadLine());
             Console.WriteLine("Enter how many percents:");
             double percent = double.Parse(Console.ReadLine());
             Console.WriteLine("Enter how many days:");
             int days = int.Parse(Console.ReadLine());
-            EmployeePercentRate employeePercentRate = new EmployeePercentRate(accrual2, percent, days);
-            employeePercentRate.Employee = employee3;
-            Console.WriteLine($"{employeePercentRate.Employee}. Rate is {employeePercentRate.Salary()}");
+            Employee employeePercentRate = new EmployeePercentRate(percent, days,rate3,nameOfEmployee3);
+            Console.WriteLine($"{employeePercentRate.Name()}. Rate is {employeePercentRate.Salary()}");
         }
     }
 }

@@ -1,12 +1,23 @@
 ﻿namespace Salary
 {
-    class EmployeeInState : EmployeeFixedRate
+    class EmployeeInState : Employee
     {
-        private double accrual;
-        public EmployeeInState(double accrual) : base(accrual)
+        private string workplace;
+        public EmployeeInState(string workplace,double rate, string nameOfEmployee) : base(rate, nameOfEmployee)
         {
-            this.accrual = accrual;
+            this.workplace = workplace;
         }
-        public string State { get; set; }
+        public override double Salary()
+        {
+            return rate;
+        }
+        public override string Name()
+        {
+            return nameOfEmployee;
+        }
+        public string Workplace()
+        {
+            return workplace;
+        }
     }
 }

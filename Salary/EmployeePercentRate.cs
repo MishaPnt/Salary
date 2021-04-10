@@ -1,19 +1,21 @@
 ﻿namespace Salary
 {
-    class EmployeePercentRate : EmployeeFixedRate
+    class EmployeePercentRate : Employee
     {
-        private double accrual;
         private double percent;
         private int days;
-        public EmployeePercentRate(double accrual, double percent,int days) : base(accrual)
+        public EmployeePercentRate(double percent,int days,double rate, string nameOfEmployee) : base(rate, nameOfEmployee)
         {
-            this.accrual = accrual;
             this.percent = percent;
             this.days = days;
         }
-        public double Salary()
+        public override double Salary()
         {
-            return days*8+accrual * percent/100;
+            return days * 8 + rate * percent / 100;
+        }
+        public override string Name()
+        {
+            return nameOfEmployee;
         }
     }
 }

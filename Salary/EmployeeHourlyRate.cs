@@ -1,15 +1,24 @@
 ﻿namespace Salary
 {
-    class EmployeeHourlyRate : EmployeeFixedRate
+    class EmployeeHourlyRate : Employee
     {
         private double hours;
-        public EmployeeHourlyRate(double accrual, double hours) : base(accrual)
+        public EmployeeHourlyRate(double hours,double rate,string nameOfEmployee) : base(rate,nameOfEmployee)
         {
             this.hours = hours;
         }
-        public double HoursRate()
+
+        public EmployeeHourlyRate(double rate, string nameOfEmployee) : base(rate, nameOfEmployee)
         {
-            return hours * SalaryAccrual();
+        }
+
+        public override double Salary()
+        {
+            return hours * rate;
+        }
+        public override string Name()
+        {
+            return nameOfEmployee; 
         }
     }
 }
