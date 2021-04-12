@@ -5,7 +5,6 @@ namespace Salary
     {
         static void Main(string[] args)
         {
-
             Console.WriteLine("\tEmployee with hourly rate");
             Console.WriteLine("Fixed rate:");
             double rate1 = double.Parse(Console.ReadLine());
