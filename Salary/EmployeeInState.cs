@@ -7,17 +7,14 @@
         {
             this.workplace = workplace;
         }
-        public override double Salary()
-        {
-            return rate;
-        }
-        public override string Name()
-        {
-            return nameOfEmployee;
-        }
         public string Workplace()
         {
             return workplace;
         }
+        public override double Salary()
+        {
+            return rate ;
+        }
+
     }
 }

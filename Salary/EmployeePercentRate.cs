@@ -11,11 +11,7 @@
         }
         public override double Salary()
         {
-            return days * 8 + rate * percent / 100;
-        }
-        public override string Name()
-        {
-            return nameOfEmployee;
+            return days * rate * percent / 100;
         }
     }
 }

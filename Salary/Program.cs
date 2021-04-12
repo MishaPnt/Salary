@@ -5,14 +5,9 @@ namespace Salary
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter the rate salary: ");
-            double rate = double.Parse(Console.ReadLine());
-            Console.WriteLine("Enter the initials of employee: ");
-            string nameOfEmployee = Console.ReadLine();
-            Employee employeeHourlyRate = new EmployeeHourlyRate(rate,nameOfEmployee);
-            Console.WriteLine($"Salary Of {employeeHourlyRate.Name()} is {employeeHourlyRate.Salary()}");
+
             Console.WriteLine("\tEmployee with hourly rate");
-            Console.WriteLine("Enter the accrual salary: ");
+            Console.WriteLine("Fixed rate:");
             double rate1 = double.Parse(Console.ReadLine());
             Console.WriteLine("Enter the working hours: ");
             double hours = double.Parse(Console.ReadLine());
@@ -27,8 +22,9 @@ namespace Salary
             string workplace = Console.ReadLine();
             Console.WriteLine("Fixed rate:");
             double rate2 = double.Parse(Console.ReadLine());
-            Employee employeeInState = new EmployeeInState(workplace,rate,nameOfEmployee2);
-            Console.WriteLine($"{employeeInState.Name()} working in {employeeInState.Workplace()}. Rate is {employeeInState.Salary()}");
+            Employee employeeInState = new EmployeeInState(workplace,rate2,nameOfEmployee2);
+            EmployeeInState employeeInState1 = new EmployeeInState(workplace,rate2,nameOfEmployee2);
+            Console.WriteLine($"{employeeInState.Name()} working in {employeeInState1.Workplace()}. Rate is {employeeInState.Salary()}");
             Console.WriteLine("\tPercent Rate of employee ");
             Console.WriteLine("Enter the initials of employee: ");
             string nameOfEmployee3 = Console.ReadLine();

@@ -10,6 +10,9 @@
             this.nameOfEmployee = nameOfEmployee;
         }
         public abstract double Salary();
-        public abstract string Name();
+        public string Name()
+        {
+            return nameOfEmployee;
+        }
     }
 }
